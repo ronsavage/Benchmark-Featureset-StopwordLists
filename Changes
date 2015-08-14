@@ -1,0 +1,19 @@
+Revision history for Perl extension Benchmark::Featureset::StopWordLists.
+
+1.02  Wed Feb 18 16:32:00 2015
+	- Rename CHANGES to Changes.
+	- Update pre-reqs. Lingua::EN::StopWordList is now V 1.01.
+	- Add repository https://github.com/ronsavage/Benchmark-Featureset-StopWordLists.git
+	- Rename module Benchmark::Featureset::StopWordLists (capital 'W').
+		This matches Lingua::EN::StopWordList.
+
+1.02  Fri Aug 14 17:44:00 2015
+	- Treat return value from Lingua::StopWords::getStopWords('en') as a hashref.
+
+
+1.01  Mon Aug 20 12:50:00 2012
+	- Greatly expand the list of modules excluded.
+	- Clarify the reasons for inclusion/exclusion.
+
+1.00  Fri Aug 17 17:01:00 2012
+	- Original version

@@ -1,0 +1,25 @@
+Build.PL
+Changelog.ini
+Changes
+config/.htbenchmark.featureset.stopwordlists.conf
+config/module.list.ini
+htdocs/assets/css/benchmark/featureset/stopwordlists/default.css
+htdocs/assets/css/benchmark/featureset/stopwordlists/fancy.table.css
+htdocs/assets/css/benchmark/featureset/stopwordlists/web.page.css
+htdocs/assets/templates/benchmark/featureset/stopwordlists/basic.column.tx
+htdocs/assets/templates/benchmark/featureset/stopwordlists/basic.table.tx
+htdocs/assets/templates/benchmark/featureset/stopwordlists/fancy.table.tx
+htdocs/assets/templates/benchmark/featureset/stopwordlists/stopwordlists.report.tx
+html/stopwordlists.report.html
+lib/Benchmark/Featureset/StopWordLists.pm
+lib/Benchmark/Featureset/StopWordLists/Config.pm
+Makefile.PL
+MANIFEST			This list of files
+META.json
+META.yml
+README
+scripts/copy.config.pl
+scripts/pod2html.sh
+scripts/stopwordlists.report.pl
+t/load.t
+xt/author/pod.t
