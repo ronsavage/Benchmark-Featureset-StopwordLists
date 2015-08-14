@@ -29,7 +29,7 @@ WriteMakefile
 	PL_FILES  => {'scripts/copy.config.pl' => 'Copying...'},
 	PREREQ_PM =>
 	{
-		'Config' => undef,
+		'Config' => 5.020002,
 		'Config::Tiny' => 2.13,
 		'Date::Simple' => 3.03,
 		'File::Copy' => 2.21,
