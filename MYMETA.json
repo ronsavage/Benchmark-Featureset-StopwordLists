@@ -26,7 +26,7 @@
       },
       "runtime" : {
          "requires" : {
-            "Config" : "0",
+            "Config" : "5.020002",
             "Config::Tiny" : "2.13",
             "Date::Simple" : "3.03",
             "File::Copy" : "2.21",
