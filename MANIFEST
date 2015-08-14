@@ -1,5 +1,4 @@
 .gitignore
-Build.PL
 Changelog.ini
 Changes
 config/.htbenchmark.featureset.stopwordlists.conf

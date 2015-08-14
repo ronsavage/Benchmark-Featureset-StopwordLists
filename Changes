@@ -1,7 +1,7 @@
 Revision history for Perl extension Benchmark::Featureset::StopWordLists.
 
 1.02  Wed Feb 18 16:32:00 2015
-	- Rename CHANGES to Changes.
+	- Rename CHANGES to Changes as per CPAN::Spec::Changes.
 	- Update pre-reqs. Lingua::EN::StopWordList is now V 1.01.
 	- Add repository https://github.com/ronsavage/Benchmark-Featureset-StopWordLists.git
 	- Rename module Benchmark::Featureset::StopWordLists (capital 'W').
