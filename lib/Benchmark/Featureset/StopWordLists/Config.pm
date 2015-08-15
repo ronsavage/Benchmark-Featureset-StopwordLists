@@ -7,42 +7,48 @@ use Config::Tiny;
 
 use File::HomeDir;
 
-use Hash::FieldHash ':all';
+use Moo;
 
 use Path::Class;
 
-fieldhash my %config           => 'config';
-fieldhash my %config_file_path => 'config_file_path';
-fieldhash my %section          => 'section';
+use Types::Standard 'HashRef';
+
+has config =>
+(
+	default  => sub{return {} },
+	is       => 'rw',
+	isa      => HashRef,
+	required => 0,
+);
+
+has config_file_path =>
+(
+	default  => sub{return {} },
+	is       => 'rw',
+	isa      => HashRef,
+	required => 0,
+);
+
+has section =>
+(
+	default  => sub{return {} },
+	is       => 'rw',
+	isa      => HashRef,
+	required => 0,
+);
 
 our $VERSION = '1.02';
 
 # -----------------------------------------------
 
-sub init
+sub BUILD
 {
-	my($self, $arg) = @_;
-
-	return from_hash($self, $arg);
-
-} # End of init.
-
-# -----------------------------------------------
-
-sub new
-{
-	my($class, %arg) = @_;
-    my($self)        = bless {}, $class;
-
-	$self -> init(\%arg);
-
+	my($self) = @_;
 	my($path) = Path::Class::file(File::HomeDir -> my_dist_config('Benchmark-Featureset-StopWordLists'), '.htbenchmark.featureset.stopwordlists.conf');
 
 	$self -> read($path);
 
-    return $self;
-
-} # End of new.
+} # End of BUILD.
 
 # -----------------------------------------------
 

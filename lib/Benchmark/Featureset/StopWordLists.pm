@@ -10,18 +10,44 @@ use Config::Tiny;
 
 use Date::Simple;
 
-use Hash::FieldHash ':all';
-
 use Lingua::EN::StopWordList;
 use Lingua::EN::StopWords;
 use Lingua::StopWords;
 
+use Moo;
+
 use Text::Xslate 'mark_raw';
 
-fieldhash my %html_config   => 'html_config';
-fieldhash my %module_config => 'module_config';
+use Types::Standard 'HashRef';
+
+has html_config =>
+(
+	default  => sub{return {} },
+	is       => 'rw',
+	isa      => HashRef,
+	required => 0,
+);
+
+has module_config =>
+(
+	default  => sub{return {} },
+	is       => 'rw',
+	isa      => HashRef,
+	required => 0,
+);
 
 our $VERSION = '1.02';
+
+# --------------------------------------------------
+
+sub BUILD
+{
+	my($self) = @_;
+
+	$self -> html_config(Benchmark::Featureset::StopWordLists::Config -> new -> config);
+	$self -> module_config(Config::Tiny -> read('config/module.list.ini') );
+
+} # End of BUILD.
 
 # ------------------------------------------------
 
@@ -228,19 +254,6 @@ sub _build_word_lists
 
 # --------------------------------------------------
 
-sub _init
-{
-	my($self, $arg)      = @_;
-	$$arg{html_config}   = Benchmark::Featureset::StopWordLists::Config -> new -> config;
-	$$arg{module_config} = Config::Tiny -> read('config/module.list.ini');
-	$self                = from_hash($self, $arg);
-
-	return $self;
-
-} # End of _init.
-
-# --------------------------------------------------
-
 sub log
 {
 	my($self, $level, $s) = @_;
@@ -250,18 +263,6 @@ sub log
 	print "$level: $s\n";
 
 } # End of log.
-
-# --------------------------------------------------
-
-sub new
-{
-	my($class, %arg) = @_;
-	my($self)        = bless {}, $class;
-	$self            = $self -> _init(\%arg);
-
-	return $self;
-
-}	# End of new.
 
 # ------------------------------------------------
 
