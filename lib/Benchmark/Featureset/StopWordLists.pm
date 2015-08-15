@@ -18,21 +18,29 @@ use Moo;
 
 use Text::Xslate 'mark_raw';
 
-use Types::Standard 'HashRef';
+use Types::Standard qw/Any Str/;
 
 has html_config =>
 (
-	default  => sub{return {} },
+	default  => sub{return ''},
 	is       => 'rw',
-	isa      => HashRef,
+	isa      => Any,
 	required => 0,
 );
 
 has module_config =>
 (
-	default  => sub{return {} },
+	default  => sub{return ''},
 	is       => 'rw',
-	isa      => HashRef,
+	isa      => Any,
+	required => 0,
+);
+
+has os_version =>
+(
+	default  => sub{return '! Debian'},
+	is       => 'rw',
+	isa      => Str,
 	required => 0,
 );
 
@@ -42,10 +50,12 @@ our $VERSION = '1.02';
 
 sub BUILD
 {
-	my($self) = @_;
+	my($self)   = @_;
+	my($config) = Benchmark::Featureset::StopWordLists::Config -> new;
 
-	$self -> html_config(Benchmark::Featureset::StopWordLists::Config -> new -> config);
+	$self -> html_config($config -> config);
 	$self -> module_config(Config::Tiny -> read('config/module.list.ini') );
+	$self -> os_version($config -> os_version);
 
 } # End of BUILD.
 
@@ -62,7 +72,7 @@ sub _build_environment
 	push @environment,
 	{left => 'Author', right => mark_raw(qq|<a href="http://savage.net.au/">Ron Savage</a>|)},
 	{left => 'Date',   right => Date::Simple -> today},
-	{left => 'OS',     right => 'Debian V 6.0.4'},
+	{left => 'OS',     right => $self -> os_version},
 	{left => 'Perl',   right => $Config{version} };
 
 	return \@environment;

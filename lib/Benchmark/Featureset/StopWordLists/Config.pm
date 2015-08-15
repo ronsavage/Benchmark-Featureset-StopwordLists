@@ -6,34 +6,43 @@ use warnings;
 use Config::Tiny;
 
 use File::HomeDir;
+use File::Slurp;
 
 use Moo;
 
 use Path::Class;
 
-use Types::Standard 'HashRef';
+use Types::Standard qw/Any HashRef Str/;
 
 has config =>
 (
-	default  => sub{return {} },
+	default  => sub{return ''},
 	is       => 'rw',
-	isa      => HashRef,
+	isa      => Any,
 	required => 0,
 );
 
 has config_file_path =>
 (
-	default  => sub{return {} },
+	default  => sub{return ''},
 	is       => 'rw',
-	isa      => HashRef,
+	isa      => Any,
+	required => 0,
+);
+
+has os_version =>
+(
+	default  => sub{return '! Debian'},
+	is       => 'rw',
+	isa      => Str,
 	required => 0,
 );
 
 has section =>
 (
-	default  => sub{return {} },
+	default  => sub{return ''},
 	is       => 'rw',
-	isa      => HashRef,
+	isa      => Str,
 	required => 0,
 );
 
@@ -44,11 +53,34 @@ our $VERSION = '1.02';
 sub BUILD
 {
 	my($self) = @_;
+
 	my($path) = Path::Class::file(File::HomeDir -> my_dist_config('Benchmark-Featureset-StopWordLists'), '.htbenchmark.featureset.stopwordlists.conf');
 
 	$self -> read($path);
 
+	$self -> get_os_version;
+
 } # End of BUILD.
+
+# -----------------------------------------------
+
+sub get_os_version
+{
+	my($self) = @_;
+	my($path) = Path::Class::file('/etc/debian_version');
+
+	my($os_version);
+
+	if (-f $path)
+	{
+		$os_version = 'Debian V ' . read_file($path);
+
+		chomp($os_version);
+
+		$self -> os_version($os_version);
+	}
+
+} # End of get_os_version.
 
 # -----------------------------------------------
 
