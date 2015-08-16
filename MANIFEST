@@ -22,5 +22,6 @@ README
 scripts/copy.config.pl
 scripts/pod2html.sh
 scripts/stopwordlists.report.pl
+scripts/stopwordlists.sh
 t/load.t
 xt/author/pod.t
