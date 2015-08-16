@@ -27,7 +27,7 @@ requires:
   File::Copy: '2.21'
   File::HomeDir: '0.99'
   File::Slurp: '9999.19'
-  Lingua::EN::StopwordLists: '1.01'
+  Lingua::EN::StopWordList: '1.01'
   Lingua::EN::StopWords: '0.1'
   Lingua::StopWords: '0.09'
   Module::Version: '0.12'
