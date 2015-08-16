@@ -7,7 +7,7 @@ Revision history for Perl extension Benchmark::Featureset::StopWordLists.
 	- Rename module Benchmark::Featureset::StopWordLists (capital 'W').
 		This matches Lingua::EN::StopWordList.
 	- Replace Hash::FieldHash with Moo and Types::Standard.
-	- Add scripts/stopwordlists.sh (useful only to me).
+	- Add scripts/stopwordlists.report.sh (useful only to me).
 
 1.02  Fri Aug 14 17:44:00 2015
 	- Treat return value from Lingua::StopWords::getStopWords('en') as a hashref.
