@@ -1,4 +1,4 @@
-package Benchmark::Featureset::StopWordLists::Config;
+package Benchmark::Featureset::StopwordLists::Config;
 
 use strict;
 use warnings;
@@ -46,7 +46,7 @@ has section =>
 	required => 0,
 );
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 # -----------------------------------------------
 
@@ -54,7 +54,7 @@ sub BUILD
 {
 	my($self) = @_;
 
-	my($path) = Path::Class::file(File::HomeDir -> my_dist_config('Benchmark-Featureset-StopWordLists'), '.htbenchmark.featureset.stopwordlists.conf');
+	my($path) = Path::Class::file(File::HomeDir -> my_dist_config('Benchmark-Featureset-StopwordLists'), '.htbenchmark.featureset.stopwordlists.conf');
 
 	$self -> read($path);
 
@@ -129,15 +129,15 @@ sub read
 
 =head1 NAME
 
-Benchmark::Featureset::StopWordLists::Config - Compare various stopword list modules
+Benchmark::Featureset::StopwordLists::Config - Compare various stopword list modules
 
 =head1 Synopsis
 
-See L<Benchmark::Featureset::StopWordLists>.
+See L<Benchmark::Featureset::StopwordLists>.
 
 =head1 Description
 
-L<Benchmark::Featureset::StopWordLists> compares verious stopword list modules.
+L<Benchmark::Featureset::StopwordLists> compares verious stopword list modules.
 
 =head1 Methods
 
@@ -159,7 +159,7 @@ If the file can't be read, die is called.
 
 The path to the config file is determined by:
 
-	Path::Class::file(File::HomeDir -> my_dist_config('Benchmark-Featureset-StopWordLists'), '.htbenchmark.featureset.stopwordlists.conf');
+	Path::Class::file(File::HomeDir -> my_dist_config('Benchmark-Featureset-StopwordLists'), '.htbenchmark.featureset.stopwordlists.conf');
 
 During installation, you should have run scripts/copy.config.pl, which uses the same code, to move the config file
 from the config/ directory in the disto into an OS-dependent directory.
@@ -170,15 +170,15 @@ The run-time code uses this module to look in the same directory as used by scri
 
 Email the author, or log a bug on RT:
 
-L<https://rt.cpan.org/Public/Dist/Display.html?Name=Benchmark::Featureset::StopWordLists>.
+L<https://rt.cpan.org/Public/Dist/Display.html?Name=Benchmark::Featureset::StopwordLists>.
 
 =head1 Repository
 
-L<https://github.com/ronsavage/Benchmark-Featureset-StopWordLists.git>.
+L<https://github.com/ronsavage/Benchmark-Featureset-StopwordLists.git>.
 
 =head1 Author
 
-L<Benchmark::Featureset::StopWordLists> was written by Ron Savage I<E<lt>ron@savage.net.auE<gt>> in 2012.
+L<Benchmark::Featureset::StopwordLists> was written by Ron Savage I<E<lt>ron@savage.net.auE<gt>> in 2012.
 
 Home page: L<http://savage.net.au/index.html>.
 

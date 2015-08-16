@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME=Benchmark/Featureset/StopWordLists
+NAME=Benchmark/Featureset/StopwordLists
 export NAME
 
 mkdir -p /dev/shm/html/Perl-modules/html/$NAME

@@ -14,15 +14,15 @@ WriteMakefile
 	) : (),
 	clean =>
 	{
-	FILES => 'blib/* Makefile MANIFEST Benchmark-Featureset-StopWordLists-*'
+	FILES => 'blib/* Makefile MANIFEST Benchmark-Featureset-StopwordLists-*'
 	},
 	dist =>
 	{
 	COMPRESS => 'gzip',
 	SUFFIX   => 'gz'
 	},
-	DISTNAME  => 'Benchmark-Featureset-StopWordLists',
-	NAME      => 'Benchmark::Featureset::StopWordLists',
+	DISTNAME  => 'Benchmark-Featureset-StopwordLists',
+	NAME      => 'Benchmark::Featureset::StopwordLists',
 	LICENSE   => 'artistic_2',
 # Next line runs copy.config.pl when user runs 'make'.
 # Warning: '...' => 0 is OK but => '' or undef are ignored.
@@ -48,5 +48,5 @@ WriteMakefile
 		'Types::Standard' => 1.000005,
 		'warnings' => 1.12,
 	},
-	VERSION_FROM => 'lib/Benchmark/Featureset/StopWordLists.pm',
+	VERSION_FROM => 'lib/Benchmark/Featureset/StopwordLists.pm',
 );

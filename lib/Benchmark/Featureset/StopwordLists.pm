@@ -1,16 +1,16 @@
-package Benchmark::Featureset::StopWordLists;
+package Benchmark::Featureset::StopwordLists;
 
 use strict;
 use warnings;
 
-use Benchmark::Featureset::StopWordLists::Config;
+use Benchmark::Featureset::StopwordLists::Config;
 
 use Config;
 use Config::Tiny;
 
 use Date::Simple;
 
-use Lingua::EN::StopWordList;
+use Lingua::EN::StopwordList;
 use Lingua::EN::StopWords;
 use Lingua::StopWords;
 
@@ -44,14 +44,14 @@ has os_version =>
 	required => 0,
 );
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 # --------------------------------------------------
 
 sub BUILD
 {
 	my($self)   = @_;
-	my($config) = Benchmark::Featureset::StopWordLists::Config -> new;
+	my($config) = Benchmark::Featureset::StopwordLists::Config -> new;
 
 	$self -> html_config($config -> config);
 	$self -> module_config(Config::Tiny -> read('config/module.list.ini') );
@@ -141,7 +141,7 @@ sub _build_module_list
 
 		if ($module eq 'Lingua::EN::StopWordList')
 		{
-			$word_list = Lingua::EN::StopWordList -> new -> words;
+			$word_list = Lingua::EN::StopwordList -> new -> words;
 		}
 		elsif ($module eq 'Lingua::EN::StopWords')
 		{
@@ -309,15 +309,15 @@ sub run
 
 =head1 NAME
 
-Benchmark::Featureset::StopWordLists - Compare various stopword list modules
+Benchmark::Featureset::StopwordLists - Compare various stopword list modules
 
 =head1 Synopsis
 
 	#!/usr/bin/env perl
 
-	use Benchmark::Featureset::StopWordLists;
+	use Benchmark::Featureset::StopwordLists;
 
-	Benchmark::Featureset::StopWordLists -> new -> run;
+	Benchmark::Featureset::StopwordLists -> new -> run;
 
 See scripts/stopwordlists.report.pl. This outputs HTML to STDOUT.
 
@@ -329,7 +329,7 @@ L<View this report on my website|http://savage.net.au/Perl-modules/html/stopword
 
 =head1 Description
 
-L<Benchmark::Featureset::StopWordLists> compares various stopword list modules.
+L<Benchmark::Featureset::StopwordLists> compares various stopword list modules.
 
 The list of modules processed is shipped in data/module.list.ini, and can easily be edited before re-running:
 
@@ -349,15 +349,15 @@ for help on unpacking and installing distros.
 
 =head2 The Module Itself
 
-Install L<Benchmark::Featureset::StopWordLists> as you would for any C<Perl> module:
+Install L<Benchmark::Featureset::StopwordLists> as you would for any C<Perl> module:
 
 Run:
 
-	cpanm Benchmark::Featureset::StopWordLists
+	cpanm Benchmark::Featureset::StopwordLists
 
 or run:
 
-	sudo cpan Benchmark::Featureset::StopWordLists
+	sudo cpan Benchmark::Featureset::StopwordLists
 
 or unpack the distro, and then either:
 
@@ -386,12 +386,12 @@ If you are using Makefile.PL, running make (without parameters) will also run sc
 
 Either way, before editing the config file, ensure you run scripts/copy.config.pl. It will copy
 the config file using L<File::HomeDir>, to a directory where the run-time code in
-L<Benchmark::Featureset::StopWordLists> will look for it.
+L<Benchmark::Featureset::StopwordLists> will look for it.
 
-	shell>cd Benchmark-Featureset-StopWordLists-1.00
+	shell>cd Benchmark-Featureset-StopwordLists-1.00
 	shell>perl scripts/copy.config.pl
 
-Under Debian, this directory will be $HOME/.perl/Benchmark-Featureset-StopWordLists/. When you
+Under Debian, this directory will be $HOME/.perl/Benchmark-Featureset-StopwordLists/. When you
 run copy.config.pl, it will report where it has copied the config file to.
 
 Check the docs for L<File::HomeDir> to see what your operating system returns for a
@@ -408,9 +408,9 @@ CPAN tester machines run tests as users who don't have home directories, resulti
 
 =head1 Constructor and Initialization
 
-C<new()> is called as C<< my($builder) = Benchmark::Featureset::StopWordLists -> new(k1 => v1, k2 => v2, ...) >>.
+C<new()> is called as C<< my($builder) = Benchmark::Featureset::StopwordLists -> new(k1 => v1, k2 => v2, ...) >>.
 
-It returns a new object of type C<Benchmark::Featureset::StopWordLists>.
+It returns a new object of type C<Benchmark::Featureset::StopwordLists>.
 
 Key-value pairs in accepted in the parameter list (see corresponding methods for details):
 
@@ -467,15 +467,15 @@ Version numbers < 1.00 represent development versions. From 1.00 up, they are pr
 
 Email the author, or log a bug on RT:
 
-L<https://rt.cpan.org/Public/Dist/Display.html?Name=Benchmark::Featureset::StopWordLists>.
+L<https://rt.cpan.org/Public/Dist/Display.html?Name=Benchmark::Featureset::StopwordLists>.
 
 =head1 Repository
 
-L<https://github.com/ronsavage/Benchmark-Featureset-StopWordLists.git>.
+L<https://github.com/ronsavage/Benchmark-Featureset-StopwordLists.git>.
 
 =head1 Author
 
-L<Benchmark::Featureset::StopWordLists> was written by Ron Savage I<E<lt>ron@savage.net.auE<gt>> in 2012.
+L<Benchmark::Featureset::StopwordLists> was written by Ron Savage I<E<lt>ron@savage.net.auE<gt>> in 2012.
 
 Home page: L<http://savage.net.au/index.html>.
 

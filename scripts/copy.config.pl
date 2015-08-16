@@ -10,7 +10,7 @@ use Path::Class;
 
 # ----------------------------------------
 
-my($module)           = 'Benchmark::Featureset::StopWordLists';
+my($module)           = 'Benchmark::Featureset::StopwordLists';
 my($module_dir)       = $module;
 $module_dir           =~ s/::/-/g;
 my($dir_name)         = File::HomeDir -> my_dist_config($module_dir, {create => 1});

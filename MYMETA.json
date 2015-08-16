@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Benchmark-Featureset-StopWordLists",
+   "name" : "Benchmark-Featureset-StopwordList",
    "prereqs" : {
       "build" : {
          "requires" : {
@@ -32,7 +32,7 @@
             "File::Copy" : "2.21",
             "File::HomeDir" : "0.99",
             "File::Slurp" : "9999.19",
-            "Lingua::EN::StopWordList" : "1.01",
+            "Lingua::EN::StopwordLists" : "1.01",
             "Lingua::EN::StopWords" : "0.1",
             "Lingua::StopWords" : "0.09",
             "Module::Version" : "0.12",
@@ -48,11 +48,11 @@
       }
    },
    "provides" : {
-      "Benchmark::Featureset::StopWordLists" : {
+      "Benchmark::Featureset::StopwordList" : {
          "file" : "lib/Benchmark/Featureset/StopWordLists.pm",
          "version" : "1.02"
       },
-      "Benchmark::Featureset::StopWordLists::Config" : {
+      "Benchmark::Featureset::StopwordList::Config" : {
          "file" : "lib/Benchmark/Featureset/StopWordLists/Config.pm",
          "version" : "1.02"
       }

@@ -11,8 +11,8 @@ htdocs/assets/templates/benchmark/featureset/stopwordlists/basic.table.tx
 htdocs/assets/templates/benchmark/featureset/stopwordlists/fancy.table.tx
 htdocs/assets/templates/benchmark/featureset/stopwordlists/stopwordlists.report.tx
 html/stopwordlists.report.html
-lib/Benchmark/Featureset/StopWordLists.pm
-lib/Benchmark/Featureset/StopWordLists/Config.pm
+lib/Benchmark/Featureset/StopwordLists.pm
+lib/Benchmark/Featureset/StopwordLists/Config.pm
 LICENSE
 Makefile.PL
 MANIFEST			This list of files

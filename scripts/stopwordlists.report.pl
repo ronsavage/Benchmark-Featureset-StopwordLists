@@ -3,8 +3,8 @@
 use strict;
 use warnings;
 
-use Benchmark::Featureset::StopWordLists;
+use Benchmark::Featureset::StopwordLists;
 
 # ---------------------------------------
 
-Benchmark::Featureset::StopWordLists -> new -> run;
+Benchmark::Featureset::StopwordLists -> new -> run;

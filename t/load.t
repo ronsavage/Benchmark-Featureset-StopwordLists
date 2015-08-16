@@ -2,4 +2,4 @@ use Test::More tests => 1;
 
 # ------------------------
 
-BEGIN{ use_ok('Benchmark::Featureset::StopWordLists'); }
+BEGIN{ use_ok('Benchmark::Featureset::StopwordLists'); }

@@ -1,4 +1,4 @@
-README file for Benchmark::Featureset::StopWordLists.
+README file for Benchmark::Featureset::StopwordLists.
 
 See also: CHANGES and Changelog.ini.
 
@@ -9,8 +9,8 @@ ftp://ftp.info-zip.org/pub/infozip/
 
 1 Installing from a Unix-like distro
 ------------------------------------
-shell>gunzip Benchmark-Featureset-StopWordLists-1.01.tgz
-shell>tar mxvf Benchmark-Featureset-StopWordLists-1.01.tar
+shell>gunzip Benchmark-Featureset-StopwordLists-1.01.tgz
+shell>tar mxvf Benchmark-Featureset-StopwordLists-1.01.tar
 
 On Unix-like systems, assuming you have installed Module::Build V 0.25+:
 
@@ -43,7 +43,7 @@ Run StopWordLists.pm through your favourite pod2html translator.
 
 2 Installing from an ActiveState distro
 ---------------------------------------
-shell>unzip Benchmark-Featureset-StopWordLists-1.01.zip
-shell>ppm install --location=. Benchmark-Featureset-StopWordLists
-shell>del Benchmark-Featureset-StopWordLists-1.01.ppd
-shell>del PPM-Benchmark-Featureset-StopWordLists-1.01.tar.gz
+shell>unzip Benchmark-Featureset-StopwordLists-1.01.zip
+shell>ppm install --location=. Benchmark-Featureset-StopwordLists
+shell>del Benchmark-Featureset-StopwordLists-1.01.ppd
+shell>del PPM-Benchmark-Featureset-StopwordLists-1.01.tar.gz
