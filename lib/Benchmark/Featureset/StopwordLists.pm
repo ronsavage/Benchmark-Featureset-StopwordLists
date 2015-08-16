@@ -10,7 +10,7 @@ use Config::Tiny;
 
 use Date::Simple;
 
-use Lingua::EN::StopwordList;
+use Lingua::EN::StopWordList;
 use Lingua::EN::StopWords;
 use Lingua::StopWords;
 
@@ -141,7 +141,7 @@ sub _build_module_list
 
 		if ($module eq 'Lingua::EN::StopWordList')
 		{
-			$word_list = Lingua::EN::StopwordList -> new -> words;
+			$word_list = Lingua::EN::StopWordList -> new -> words;
 		}
 		elsif ($module eq 'Lingua::EN::StopWords')
 		{
